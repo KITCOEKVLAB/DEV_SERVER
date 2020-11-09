@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Experient1</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="details.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#inputVoltage").keyup(function () {
+                if ($("#inputVoltage").val() <= 300 && $("#inputVoltage").val() > 0) {
+                    $("#inputVoltage").css("border", "2px solid green");
+                    $("#msg1").html("<p class='text-success'>Valid!</p>").css("float", "right");
+                }
+                else {
+                    $("#inputVoltage").css("border", "2px solid red");
+                    $("#msg1").html("<p class='text-danger'>Range 0 to 300 only</p>").css("float", "right");
+                }
+            });
+            $("#inputCurrent").keyup(function () {
+                if ($("#inputCurrent").val() <= 5 && $("#inputCurrent").val() > 0) {
+                    $("#inputCurrent").css("border", "2px solid green");
+                    $("#msg2").html("<p class='text-success'>Valid!</p>").css("float", "right");
+                }
+                else {
+                    $("#inputCurrent").css("border", "2px solid red");
+                    $("#msg2").html("<p class='text-danger'>Range 0 to 5</p>").css("float", "right");
+                }
+            });
+
+
+
+
+
+
+        });
+
+        function cali() {
+            var v = parseFloat(document.getElementById('inputVoltage').value);
+            var c = parseFloat(document.getElementById('inputCurrent').value);
+            var q = v * c;
+            // alert(q);
+
+
+            var t0 = random(35, 40);
+            var ti = (q * 9.95) + t0;
+            //alert(ti);
+
+            var array = new Array(6);
+            var array1 = new Array(6);
+
+            for (var i = 0; i < 6; i++) {
+                var value = random(t0 - 5, t0 + 5);
+                array[i] = value;
+            }
+            for (var j = 0; j < 6; j++) {
+                var values = random(ti - 5, ti + 5);
+                array1[j] = values;
+            }
+
+            document.getElementById('t7').innerHTML = array[0].toFixed(2) + "°C";
+            document.getElementById('t8').innerHTML = array[1].toFixed(2) + "°C";
+            document.getElementById('t9').innerHTML = array[2].toFixed(2) + "°C";
+            document.getElementById('t10').innerHTML = array[3].toFixed(2) + "°C";
+            document.getElementById('t11').innerHTML = array[4].toFixed(2) + "°C";
+            document.getElementById('t12').innerHTML = array[5].toFixed(2) + "°C";
+
+            document.getElementById('t1').innerHTML = array1[0].toFixed(2) + "°C";
+            document.getElementById('t2').innerHTML = array1[1].toFixed(2) + "°C";
+            document.getElementById('t3').innerHTML = array1[2].toFixed(2) + "°C";
+            document.getElementById('t4').innerHTML = array1[3].toFixed(2) + "°C";
+            document.getElementById('t5').innerHTML = array1[4].toFixed(2) + "°C";
+            document.getElementById('t6').innerHTML = array1[5].toFixed(2) + "°C";
+        }
+
+        function imagechange() {
+
+            document.getElementById('image').src = "img/on.jpeg";
+            setTimeout(cali, 2000);
+
+
+
+        }
+        function calculate() {
+
+            var v = parseFloat(document.getElementById('inputVoltage').value);
+            var c = parseFloat(document.getElementById('inputCurrent').value);
+            if (c < 0 || c > 5) {
+                alert("Not not run with this value");
+            } else if (v < 0 || v > 300) {
+                alert("Not not run with this value");
+            }
+            setTimeout(imagechange, 2000);
+
+
+        }
+        function reseting() {
+            location.reload();
+        }
+        function random(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+
+
+
+    </script>
+</head>
+
+<body>
+    <br>
+    <br>
+    <div class="jumbotron">
+        <div class="container">
+            <div class="row ">
+                <div class="col-7 border-dark" style="background-color:white;">
+                    <div class="row">
+                        <img src="img/off.jpeg" id="image" class="col-9 m-5">
+                    </div>
+                </div>
+                <div class="col-4 border" style="background-color:white;">
+                    <br>
+                    <div class="row">
+                        <div class="col">
+                            <div class="row">
+                                <b class="col-6">T1=</b>
+                                <p id="t1"></p>
+                            </div>
+                            <div class="row">
+                                <b class="col-6">T2=</b>
+                                <p id="t2"></p>
+                            </div>
+                            <div class="row">
+                                <b class="col-6">T3=</b>
+                                <p id="t3"></p>
+                            </div>
+                            <div class="row">
+                                <b class="col-6">T4=</b>
+                                <p id="t4"></p>
+                            </div>
+                            <div class="row">
+                                <b class="col-6">T5=</b>
+                                <p id="t5"></p>
+                            </div>
+                            <div class="row">
+                                <b class="col-6">T6=</b>
+                                <p id="t6"></p>
+                            </div>
+
+                        </div>
+                        <div class="col">
+                            <div class="row">
+                                <b class="col-6">T7=</b>
+                                <p id="t7"></p>
+                            </div>
+                            <div class="row">
+                                <b class="col-6">T8=</b>
+                                <p id="t8"></p>
+                            </div>
+                            <div class="row">
+                                <b class="col-6">T9=</b>
+                                <p id="t9"></p>
+                            </div>
+                            <div class="row">
+                                <b class="col-6">T10=</b>
+                                <p id="t10"></p>
+                            </div>
+                            <div class="row">
+                                <b class="col-6">T11=</b>
+                                <p id="t11"></p>
+                            </div>
+                            <div class="row">
+                                <b class="col-6">T12=</b>
+                                <p id="t12"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div>
+                        <form>
+                            <div class="row">
+                                <div class="col-sm-6" style="float: right;">
+                                    <label for="inputEmail">Voltage(Volt)</label>
+                                    <input type="number" class="form-control" id="inputVoltage" required>
+                                    <span id="msg1"></span>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="inputPassword">Current(Ampere)</label>
+                                    <input type="number" class="form-control" id="inputCurrent" required>
+                                    <span id="msg2"></span>
+                                </div>
+                            </div>
+                            <br>
+                            <button type="button" onclick="calculate()" class="btn btn-primary ">Run</button>
+                            <button type="reset" onclick="reseting()" class="btn btn-danger ">Reset</button>
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
