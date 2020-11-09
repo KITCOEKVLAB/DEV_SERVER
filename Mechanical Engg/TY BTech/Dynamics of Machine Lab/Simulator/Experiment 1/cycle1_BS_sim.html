@@ -1,0 +1,36 @@
+<html>
+<head>
+	<link rel="stylesheet" href="css/sim1.css">
+	<script src="js/sim1.js"></script> 
+	<title>Bifillar Suspension</title>
+</head>
+<body>
+	<div class="container">
+	<div id="st-box">  
+  <form name="l1" id="contact" method="post" onsubmit="calculate(); return false;">
+    <h3>Bifilar Suspension Simulator</h3>
+    <br><br> 
+    <fieldset>
+      <input placeholder="Enter Length of Suspension (cm)" type="text" name="l" tabindex="1" required autofocus>
+    </fieldset>
+    <fieldset>
+      <button name="submit" type="submit" onsubmit="calculate()">Run</button>
+      <button name="submit" type="reset">Clear</button>
+    </fieldset>
+    <br><br>    
+    <fieldset>
+    	<h4>Time Period for 10 oscillations is <input type="answer" name = "tp"> seconds </h4>
+    </fieldset>
+  </form>
+</div>
+<div id = "rd-box">
+	<form id="contact" method="post">
+		<video width="852" height="480" controls autoplay>
+  <source src="video/sim.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+	</form>
+	</div>
+</div>
+</body>
+</html>
