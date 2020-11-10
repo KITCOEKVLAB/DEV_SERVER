@@ -1,0 +1,50 @@
+.jumbotron{
+    background-image: url('../CSS/dna.jpg');
+    filter: blur(100%);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+body{
+    height: 50rem;
+    background-color: rgb(215, 240, 240);
+}
+
+.text{
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.4);
+    color: blanchedalmond;
+}
+
+.card{
+    /* height: 30%; */
+    box-shadow: 0 10px 10px 0 rgba(0,0,0,0.2);
+}
+
+.card1{
+    height: 195px;
+}
+
+.card2{
+    height: 400px;
+    /* width: 730px; */
+}
+
+.start{
+    background-color: cornflowerblue;
+}
+#simulation2{
+    background-image: url('..//CSS/dna.jpg');
+}
+
+.background{
+    background-color: rgb(17, 223, 17);
+}
+
+.card-img{
+    height: 395px;
+    /* width: 730px; */
+}
