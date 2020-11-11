@@ -1,0 +1,81 @@
+#loader{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    overflow: visible;
+    background: rgb(255, 255, 255) url('Loader2.gif') no-repeat center center;
+}
+
+
+.jumbotron{
+    background-image: url('../CSS/dna.jpg');
+    filter: blur(100%);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+body{
+    height: 10rem;
+    background-color: rgb(215, 240, 240);
+}
+
+.text{
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.4);
+    color: blanchedalmond;
+}
+
+.card{
+    height: 35%;
+    box-shadow: 0 20px 20px 0 rgba(0,0,0,0.2);
+}
+
+.start{
+    background-color: cornflowerblue;
+}
+.simulation{
+    height: 150%;
+    box-shadow: 0 20px 20px 0 rgba(0,0,0,0.2);
+    opacity: 0;
+    transform: translate3d(10px, 0.4px, 4px);
+    transition: 0.6s all ease-in-out;
+}
+
+.sim{
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px);
+}
+
+.simulation1{
+    height: 15rem;
+    box-shadow: 0 10px 10px 0 rgba(0,0,0,0.2);
+    opacity: 0;
+    transform: translate3d(-10px, 0.4px, 4px);
+    transition: 0.6s all ease-in-out;
+}
+
+.sim2{
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px);
+}
+
+#line1,#line2,#line3,#line4,#line5,#line6,#line7,#line8,#line9,#line10,#line11,#line12{
+    visibility: hidden;
+}
+
+.background{
+    background-color: rgb(17, 223, 17);
+}
+
+.main{
+    opacity: 0;
+    transition: 0.3s all ease-in;
+}
+
+.main2{
+    opacity: 1;
+}

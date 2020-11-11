@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Fed-batch Bioreactor Fermantation</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="jumbotron">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-sm align-self-center" id='text'>
+                    <div class="text"><br><br>
+                        <h1 class="text-center">Experiment No :01</h1>
+                        <hr style="background-color:wheat; width: 100%;"><br>
+                        <h2 class="text-center">Experiment Name: Modelling and Stimulation of fed-batch bioreactor
+                        </h2><br>
+                        <h4 class="text-center">Aim: To predict dynamics of state variables of fed-batch bioreactor with respect to time and input</h4>
+                        <br><br><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </header>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6">
+                <br>
+                <h2 class="text-center">Procedure</h2>
+                                <hr style="background-color:cadetblue; width: 30%;">
+
+                <h3>Part A</h3>
+                <div class="card card1">
+                    <div class="card-body" style="background-color: hotpink;">
+                        <div class="row">
+                            <p class="font-weight-normal font-italic" id='procedure' style="font-size: 16px;">
+                                <em>Click on below button to start simulaton process</em></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3>Part B</h3>
+                <div class="card card1">
+                    <div class="card-body" style="background-color: hotpink;">
+                        <div class="row">
+                            <p class="font-weight-normal font-italic" id='procedure1' style="font-size: 16px;">
+                                <em>Click on below button to start simulaton process</em></p>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                
+              </div>
+            
+            <div class="col-sm-6">
+                <br><br>
+                <h2 class="text-center">Simulation</h2>
+                <hr style="background-color:rgb(81, 95, 95); width: 30%;">
+                <div class="card bg-white text-white card2">
+                    <img class="card-img" src="images/loader.gif" id='procedure-image' style="color: black;">
+
+                </div>
+                <div class="container-fluid">
+                    <div class="row d-index p-4">
+                        <div class="col-sm-6">
+                            <button onclick="startsimulation()" type="button" class="btn btn-success d-index mt-1"
+                                style="width: 120px; border-radius: 10px;" id="Start"><i class="fa fa-play"
+                                    id='icon'></i>
+                                Part A</button>
+                            <br>
+                                    <h4 id='complete' class='text-primary'></h4>
+
+                        </div>
+                        <div class="col-sm-6">
+                            <button onclick="reset()" type="button" style="width: 80px; border-radius: 10px;"
+                                class="btn btn-warning d-index mt-1"><i class="fa fa-step-forward    "></i>
+                                Reset</button>
+                        </div>
+                    </div>
+
+                </div>
+                <br>
+                <br>
+                <br>
+            </div>
+        </div>
+    
+       
+    </div>
+    <footer>
+    
+            <div class="container-fluid table" id='table'>
+                        <h2 class="text-center">Observation for Fed-batch Fermantation</h2>
+                        <hr style="background-color:cadetblue; width: 50%;">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped">
+                                    <thead class="bg-primary">
+                                        <tr>
+                                            <th class="text-center">Chemical name </th>
+                                            <th class="text-center">Composition g/l</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center">Glucose</td>
+                                            <td class="text-center">2.0</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">Potassium Di-hydrogen Phosphate</td>
+                                            <td class="text-center">0.2</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">Di- Potassium hydrogen phosphate	</td>
+                                            <td class="text-center">0.8</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">Magnesium sulphate Hepta hydrate	</td>
+                                            <td class="text-center">0.5</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">Ammonium Sulphate</td>
+                                            <td class="text-center">1.0</td>
+                                        </tr>
+                                         <tr>
+                                           <td class="text-center">Calcium Chloride</td>
+                                            <td class="text-center">0.5</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    
+    
+     </footer>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    <script src="reactor.js"></script>
+
+</body>
+
+</html>

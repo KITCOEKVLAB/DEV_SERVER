@@ -1,0 +1,127 @@
+*{
+	box-sizing:border-box;
+	margin:0;
+}
+h1{
+    color:#edf4fa;
+	font-style: oblique;
+	background-color:#3C1874;
+	padding: block 10px;
+	font-size: 40px;
+}
+h3{
+	color:#edf4fa;
+	font-style: oblique;
+	background-color:#3C1874;
+	padding: block 10px;
+	
+}
+.actions{
+	display:flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+    /*background-color:rgba(197, 5, 5, 0.925);*/
+    background-color:#FFA500;
+}
+.actions .action-button{
+	display:inline;
+	background-color:#3C1874;
+	height: 50px;
+	width: 50px;
+	line-heigth:50px;
+	border-radius:50%;
+	text-align:center;
+	font-weight: bold;
+	verticle-align:middle;
+	cursor: pointer;
+    transition:0.4s;
+    color:white;
+}
+.actions .action-button:hover{
+	background-color:#932432;
+	color:white;
+}
+
+.col-md-4{
+    
+	align-content: center;
+	line-height:25px;
+	/*background-color:#fff685;*/
+    /*padding: 20px;*/
+}
+#s1{
+  /* background-color:#fff685;*/
+}
+@media(max-width:768px){
+.col-md-8{
+  /* background-color:#fff685;*/
+}
+}
+#show{
+    visibility: hidden;
+}
+.table{
+    border:1px solid #932432;
+	/*border-collapse: collapse;*/
+    border-spacing:5px;
+    /*width:50%;*/ 
+    background-color:#FFFF33;
+    
+ 
+}
+th{
+    background-color: #3C1874;
+    color:white;
+}
+table, th, td{
+    border:1px solid #3C1874;
+	/*border-collapse: collapse;*/
+    border-spacing:5px;
+    border: 1px solid black;
+}
+.code-text{
+width:100%;
+padding:15px;
+font-size:17px;
+line-height:26px;
+/*padding-left:25px;*/
+font-family: Arial, Helvetica, sans-serif;
+background-color:#FFFF33;
+
+}
+.block{
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    text-align: center;
+    width: 12vw;
+    height: 1.5vw;
+    line-height: 150%;
+    /*font-size: 2vw;*/
+    margin-top: 0%;
+    margin-bottom:5%;
+    padding-bottom: 5%;
+    
+    border: solid 9px #3C1874;
+    /*border-radius: 1.9vw #3C1874;*/
+    background-color:#3C1874;
+    padding: auto;
+    font-style: oblique;
+    color:white;
+    
+}
+.Comment{
+    display:inline;
+    background-color: rgb(238, 178, 67);
+    color:black
+    padding:0.1vw
+    padding-left: 0.3vw
+    padding-right: 0.3vw
+    font-size:10px;
+    border-radius: 1.5vw
+    margin-left:1vw
+    /*font-weight:bold*/
+    visibility:hidden
+    opacity:0.5
+    font-family:Palatino Linotype;
+}

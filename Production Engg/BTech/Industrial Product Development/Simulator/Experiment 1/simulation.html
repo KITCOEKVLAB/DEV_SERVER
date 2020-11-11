@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .split {
+              height: 100%;
+              width: 50%;
+              position: fixed;
+              z-index: 1;
+              top: 10;
+              overflow-x: hidden;
+            }
+
+            /* Control the left side */
+            .left {
+              left: 0;
+                width: 50%;
+            }
+
+            /* Control the right side */
+            .right {
+              right: 25%;
+              width:50%;
+              transform: translateX(20%);
+            }
+            .centered {
+              position: absolute;
+              top: 40%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+            }
+            
+            .centered1 {
+             padding-top: 80px;
+            }
+            
+            .center {
+              position:absolute;
+              left:150px;
+            }
+            
+            .button {
+              color: white;
+              padding: 4px 8px;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;
+              font-size: 14px;
+              margin: 4px 2px;
+              transition-duration: 0.4s;
+              cursor: pointer;
+              padding: 15px 25px
+            }
+            .button1 {
+              background-color: white; 
+              color: black; 
+              border-radius: 8px;
+              border: 3px solid #1b661e;
+            }
+
+            .button1:hover {
+              background-color: #4CAF50;
+              color: white;
+            }
+        /* ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            border: 1px solid #e7e7e7;
+            background-color: #006EFF;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover:not(.active) {
+            background-color:#0C00FF;
+        }
+
+        li a.active {
+            color: white;
+            background-color: #FF5733;
+        } */
+    </style>
+    <script>
+        function Run() {
+            document.getElementById("picture").src = "img/imagevlab.gif";
+        }
+    </script>
+</head>
+
+<body>
+
+    <!-- <ul>
+        
+        <li><a class="active" href="#">Simulation</a></li>
+        
+    </ul>  -->
+
+    <div class="split left">
+        <div class="centered centered1">
+            <img id="picture" src="img/screenshot.jpg" width="1229" height="625">
+        </div>
+    </div>
+    <div class="split right">
+        <div class="centered">
+            <p id="runcheck" style="color:red;"></p><button class="button button1 center" onclick="Run();">Run</button>
+        </div>
+    </div>
+
+</body>
+
+</html>

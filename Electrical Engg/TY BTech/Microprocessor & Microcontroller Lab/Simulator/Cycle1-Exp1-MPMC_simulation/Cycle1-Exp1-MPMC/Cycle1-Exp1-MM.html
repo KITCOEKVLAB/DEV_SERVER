@@ -1,0 +1,173 @@
+<!doctype html>
+    <head>
+        <meta charset ="UTF-8">
+        <meta name ="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="C:\Users\Admin\Desktop\VLAB GITHUB\Cycle1-Exp1-MM.css" rel="stylesheet" type="text/css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+        <link href="bootstrap-4.3.1-dist\css\bootstrap.css" rel="stylesheet">
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script
+            src="https://code.jquery.com/jquery-2.2.4.js"
+            integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+            crossorigin="anonymous"></script>
+            <script type="text/javascript" src="Cycle1-Exp1-MM.js">
+            </script>
+        <title>MPMC</title>
+    </head>
+    <body>
+        <center><h1>Block Exchange and Block transfer using 8051</h1></center>
+        <div class="actions">
+            <button id="Start" class="action-button">Run</button>
+            <button id="Reset" class="action-button">Reset</button>
+        </div>
+       
+        <div class="container-fluid" id="screen">
+            <div class="row">
+                <div class="col-md-4" id="s1">
+                    <center> <h3 class="header" id="exchange">ASSEMBLY CODE FOR BLOCK EXCHANGE</h3></center>
+                    <div class="code-text" id="hide">
+                        <div class="position" id="line1">ORG 000h
+                            <div class="Comment"></div> 
+                        </div>
+                        <div class="position" id="line2"> mov r0, #30h
+                            <div class="Comment"></div>
+                        </div>
+                        <div class="position" id="line3">mov r1,#40h
+                            <div class="Comment"></div> 
+                        </div>
+                        <div class="position" id="line4">mov r7,#05h
+                            <div class="Comment"></div> </div>
+                        <div class="position" id="line5">repeat: mov a,@r0
+                            <div class="Comment"></div> </div>
+                        <div class="position" id="line6">mov r4,a
+                            <div class="Comment"></div> </div>
+                        <div class="position" id="line7">mov a,@r1 
+                            <div class="Comment"></div>
+                        </div>
+                        <div class="position" id="line8">mov @r0,a
+                            <div class="Comment"></div> </div>
+                        <div class="position" id="line9">mov a,r4
+                            <div class="Comment"></div> </div>
+                        <div class="position" id="line10">mov @r1,a
+                            <div class="Comment"></div> </div>
+                        <div class="position" id="line11">inc r0
+                            <div class="Comment"></div> </div>
+                        <div class="position" id="line12">inc r1
+                            <div class="Comment"></div> </div>
+                        <div class="position" id="line13">djnz r7 repeat 
+                            <div class="Comment"></div>
+                        </div>
+                        <div class="position" id="line14">end
+                            <div class="Comment"></div> </div>
+                    </div>
+                    <button type="button" class="btn btn-primary" id="switch">switch to block transfer</button>
+                    
+                </div>
+
+                <div class="col-md-8">
+                    <div class="heading">
+                        <center><h3>EXECUTION</h2></center></div>
+                            <div class="row">
+                            <div class="col-md-4">
+                                <table class="table">
+                                    
+                                        <th>Registers</th>
+                                        <th>Values</th>
+                                            <tr>
+                                                <td>R0</td>
+                                                <td id="border1"></td>
+                                            </tr>
+                                             <tr>
+                                                <td>R1</td>
+                                                <td id="border2"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>R2</td>
+                                                <td id="border3"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>R3</td> 
+                                                <td id="border4"></td>
+                                            </tr>
+                                            <tr> 
+                                                <td>R4</td>
+                                                <td id="border5"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>R5</td>
+                                                <td id="border6"></td>
+                                            </tr>
+                                            <tr>    
+                                                <td>R6</td>
+                                                <td id="border7"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>R7</td> 
+                                          <br>       <td id="border8"></td>
+                                            </tr> 
+                                    
+                                    </table>
+                               </div>
+                               <div class="col-md-4">
+                                   <br> <br>  <b>ACCUMULATOR</b>
+                                   <div class="block" id="AC"><b></b></div>
+                                   <br> <b>COUNTER</b>
+                                   <div class="block" id="PC"><b></b></div>
+                                   <br><br><br>
+                                   
+                               </div>
+                               
+                               <div class="col-md-4">
+                                <table class="table" id="mytable">
+                                    <!--<thead class="thead-light">-->  
+                                <th >Source memory location</th>
+                                <th >Destination memory location</th>
+                                <tr>
+                                    <td id="loc1">30H</td>
+                                    <td id="loc6">40H</td>
+                                </tr>
+                                <tr>
+                                    <td id="loc2">31H</td>
+                                    <td id="loc7">41H</td>
+                                </tr>
+                                <tr>
+                                    <td id="loc3">32H</td>
+                                    <td id="loc8">42H</td>
+                                </tr>
+                                <tr>
+                                    <td id="loc4">33H</td>
+                                    <td id="loc9">43H</td>
+                                </tr>
+                                <tr>
+                                    <td id="loc5">34H</td>
+                                    <td id="loc10">44H</td>
+                                </tr>
+                                <!--</thead>-->
+                                </table>
+                                
+                                <!--<div class="alert alert-info alert-dismissable">
+                                    <button class="close" data-dismiss="alert" > &times; </button>
+                                    These are sample inputs you can use whatever you want
+                                </div>-->
+                                <div class="alert alert-success alert-dismissible">
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                    Reset the window for switching from one code to another
+                                </div>
+
+                               </div>
+                              
+                               </div>
+
+                            
+                    </div>
+                
+
+
+
+ </div>
+</div>
+</body>
+
+
+

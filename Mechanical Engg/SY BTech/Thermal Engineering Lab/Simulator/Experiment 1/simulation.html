@@ -1,0 +1,298 @@
+<!doctype html>
+<html>
+    
+    <head>
+        
+        <style>
+            .split {
+              height: 100%;
+              width: 50%;
+              position: fixed;
+              z-index: 1;
+              top: 10;
+              overflow-x: hidden;
+            }
+
+            /* Control the left side */
+            .left {
+              left: 0;
+        
+            }
+
+            /* Control the right side */
+            .right {
+              right: 0;
+              width:75%;
+              transform: translateX(20%);
+            }
+            
+            .centered {
+              position: absolute;
+              top: 40%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+            }
+            
+            .centered1 {
+             padding-top: 80px;
+            }
+            
+            .center {
+              position:absolute;
+              left:150px;
+            }
+            
+            .button {
+              color: white;
+              padding: 4px 8px;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;
+              font-size: 14px;
+              margin: 4px 2px;
+              transition-duration: 0.4s;
+              cursor: pointer;
+            }
+            
+            .button1 {
+              background-color: white; 
+              color: black; 
+              border-radius: 8px;
+              border: 3px solid #f44336;
+            }
+
+            .button1:hover {
+              background-color: #f44336;
+              color: white;
+            }
+            
+            .button2 {
+              background-color: white; 
+              color: black; 
+              border-radius: 8px;
+              border: 3px solid #4CAF50;
+            }
+
+            .button2:hover {
+              background-color: #4CAF50;
+              color: white;
+            }
+            
+           ul {
+              list-style-type: none;
+              margin: 0;
+              padding: 0;
+              overflow: hidden;
+              border: 1px solid #e7e7e7;
+              background-color: #006EFF;
+            }
+
+            li {
+              float: left;
+            }
+
+            li a {
+              display: block;
+              color: white;
+              text-align: center;
+              padding: 14px 16px;
+              text-decoration: none;
+            }
+
+            li a:hover:not(.active) {
+              background-color: #0C00FF;
+            }
+
+            li a.active {
+              color: white;
+              background-color: #FF5733;
+            }
+        </style>
+            
+        <script >
+            var a1 = 12 ;
+            function Clear()
+            {
+                var dropDown = document.getElementById("oils");
+                dropDown.selectedIndex = 0;
+                document.getElementById("w2").value = null;
+                document.getElementById("a1").value = null;
+                document.getElementById("ans").value = null;
+                document.getElementById("rightwrong").innerHTML = null;
+                document.getElementById("runcheck").innerHTML = null;
+                document.getElementById("picture").src = "images/main.png";
+            }
+            
+            function Select()
+            {
+                var text = document.getElementById("oils").value;
+                if(text=="oil1")
+                {
+                    document.getElementById("w2").value = 14.730;
+                    // document.getElementById("a1").value = 10.940;
+                    a1 = 10.940;
+                    document.getElementById("picture").src = "images/oil1.png";
+                    document.getElementById("runcheck").innerHTML = null;
+                    document.getElementById("rightwrong").innerHTML = null;
+                }
+                
+                else if(text=="oil2")
+                {
+                    document.getElementById("w2").value = 15.210;
+                    // document.getElementById("a1").value = 10.945;
+                    a1 = 10.945;
+                    document.getElementById("picture").src = "images/oil2.png";
+                    document.getElementById("runcheck").innerHTML = null;
+                    document.getElementById("rightwrong").innerHTML = null;
+                }
+                
+                else if(text=="oil3")
+                {
+                    document.getElementById("w2").value = 15.235;
+                    // document.getElementById("a1").value = 10.962;
+                    a1 = 10.962;
+                    document.getElementById("picture").src = "images/oil3.png";
+                    document.getElementById("runcheck").innerHTML = null;
+                    document.getElementById("rightwrong").innerHTML = null;
+                }
+                
+                else if(text=="oil4")
+                {
+                    document.getElementById("w2").value = 15.270;
+                    // document.getElementById("a1").value = 10.947;
+                    a1 = 10.947;
+                    document.getElementById("picture").src = "images/oil4.png";
+                    document.getElementById("runcheck").innerHTML = null;
+                    document.getElementById("rightwrong").innerHTML = null;
+                }
+                
+            }
+            function Run()
+            {
+                var text = document.getElementById("oils").value;
+                if(text=="oil1")
+                {
+                    document.getElementById("picture").src = "images/carbon1.gif";
+                }
+                
+                else if(text=="oil2")
+                {
+                    document.getElementById("picture").src = "images/carbon2.gif";
+                }
+                
+                else if(text=="oil3")
+                {
+                    document.getElementById("picture").src = "images/carbon3.gif";
+                }
+                
+                else if(text=="oil4")
+                {
+                    document.getElementById("picture").src = "images/carbon4.gif";
+                }
+                
+                else
+                {
+                    document.getElementById("runcheck").innerHTML = "PLEASE SELECT ENGINE OIL!";
+                }
+                window.setTimeout(()=>{
+                    document.getElementById("a1").value = a1;
+                  }, 5000);
+            }
+            
+            function Check()
+            {
+                var w2,a1,ans,text;
+                w2=Number(document.getElementById("w2").value);
+                a1=Number(document.getElementById("a1").value);
+                ans= ((a1-10.910)/(w2-10.910))*100;
+                ans=ans.toFixed(2);
+                text=Number(document.getElementById("ans").value);
+                
+                if(w2==14.730 && a1==10.940 && text==0.79)
+                {
+                    document.getElementById("rightwrong").innerHTML = "&#9989;";
+                }
+                
+                else if(w2==15.210 && a1==10.945 && text==0.81)
+                {
+                    document.getElementById("rightwrong").innerHTML = "&#9989;";
+                }
+                
+                else if(w2==15.235 && a1==10.962 && text==1.20)
+                {
+                    document.getElementById("rightwrong").innerHTML = "&#9989;";
+                }
+                
+                else if(w2==15.270 && a1==10.947 && text==0.85)
+                {
+                    document.getElementById("rightwrong").innerHTML = "&#9989;";
+                }
+                
+                else if(w2==0 || a1==0 || text==0)
+                {
+                    document.getElementById("rightwrong").innerHTML = "ENTER THE VALUE!";
+                }
+                
+                else
+                {
+                    document.getElementById("rightwrong").innerHTML = "&#10060;";
+                }                
+            
+            }
+            
+        </script>
+
+    </head>
+    
+    <body>
+        
+        <!-- <ul>
+          <li><a href="aim.html">Aim</a></li>
+          <li><a href="theory.html">Theory</a></li>
+          <li><a href="pretest.html">Pre Test</a></li>
+          <li><a href="procedure.html">Procedure</a></li>
+          <li><a class="active" href="#">Simulation</a></li>
+          <li><a href="posttest.html">Post Test</a></li>
+          <li><a href="references.html">References</a></li>
+        </ul> -->
+            
+        <div class="split left">
+            <div class="centered centered1" >
+                <img id = "picture" src="images/main.png" width="1229" height="625">
+            </div>
+        </div>
+
+        <div class="split right" >
+          <div class="centered">
+        
+                1. Weight of Empty Bulb = 10.910 gm
+                <br><br>
+                2. Engine Oil =
+                  <select name="oils" id="oils" onchange="Select()"> 
+                    <option>-----select-----</option>
+                    <option value="oil1">SAE 20 W 40</option>
+                    <option value="oil2">SAE 5 W 30</option>
+                    <option value="oil3">SAE 10 W 30</option>
+                    <option value="oil4">SAE 10 W 40</option>
+                  </select>
+                <button class="button button1" onclick="Clear();">Clear</button>
+                <br><br>
+                3. Weight of bulb with oil = <input id="w2"> gm
+              <p id="runcheck" style="color:red;"></p><button class="button button2 center" onclick="Run();">Run</button>
+                <br><br><br>
+                4. Weight of bulb with carbon residue = <input id="a1"> gm
+                <br><br>
+                5. Enter the % carbon residue = <math>
+                                                    ((A<sub>1</sub>-W<sub>1</sub>)/(W<sub>2</sub>-W<sub>1</sub>))x100
+                                                </math>
+                                              = <input id="ans" placeholder="Round Upto 2 Decimals"> % <p id="rightwrong" style="color:red;"></p><button class="button button2" onclick="Check();">Check</button>
+                <br><br>
+
+                <button class="button button1" onclick="Clear();">Reset</button>
+        
+            </div>
+     </div>
+        
+    </body>
+
+</html>
