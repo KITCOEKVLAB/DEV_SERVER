@@ -1,0 +1,99 @@
+
+#noon{
+    
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    box-shadow:  25px 25px 10px black;
+    
+}
+
+
+#ball{
+    text-align: center;
+    margin-top: 8%;
+    text-decoration: underline;
+    transition-property: transform;
+    transition-duration: 2s;
+    position: relative;
+    background-color:purple;
+    border: 1px;
+    border-radius: 50px;
+    padding: 10px;
+}    
+#ball:hover{
+    transform: scale(2);
+}               
+#thing {
+    width: 75%;
+    text-align: justify;
+}
+#bob{
+    width: 100px;
+    background-color: black;
+    text-align: center;
+    border-radius: 10px;
+    position: absolute;
+    right: 120px;
+    top: 960px;
+    padding: 14px;
+}
+#bob:hover{
+    transition-property: transform;
+    transition-duration: 2s;
+    transform: scale(2);
+}
+#bob1{
+    width: 100px;
+    position:absolute;
+    background-color: black;
+    top:1220px ;
+    right: 120px;
+    padding: 14px;
+    border-radius: 10px;
+    
+  }
+  #bob1:hover{
+    transition-property: transform;
+    transition-duration: 2s;
+    transform: scale(2);
+  }
+
+#bob2{
+    top:20px ;
+    right: 90px;
+    position:absolute;
+    padding:12px;
+    border-radius: 10px;
+    background-color: black;
+    
+}
+#bob2:hover{
+    
+    transition-property: transform;
+    transition-duration: 2s;
+    transform: scale(2);
+}
+
+#id1{
+    width: 300px;
+}
+#emm{
+    text-decoration: black underline;
+}
+#id1:hover{
+    transition-property: transform;
+    transition-duration: 1s;
+    position: relative;
+    transform: scale(1);
+}
+#etc{
+    text-decoration: underline;
+}
+
+
+
+
+
