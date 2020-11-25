@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+  <head>
+    <title>Verification Bernoulli's Theorem</title>    
+    <style>
+      body {
+        background-color: #E6E6FA;
+      }
+      .simulator{
+        background-color: #fff;
+        width: 45%;
+        margin-top: 5vh;
+        padding: 1%;
+        float: left;
+        margin-left: 2%;
+        height: 80vh;
+      }
+      sup {
+        vertical-align: sup;
+        font-size: smaller;
+      }
+      span {
+        padding-left: 20px;
+      }
+      button{
+        margin-top: 10px;
+        width: 40%;
+        height: 5vh;
+        color: white;
+        background-color: #457e45;
+      }
+      input{
+        margin-left: 10px;
+      }
+      button{
+        margin-left: 10px;
+        width: auto;  
+      }
+      .buttonclass{
+        
+        width: 20%;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="simulator">
+      <img src="try.gif" alt="Can't Load Image" width="100%" loop=1; id="imgClickAndChange" >
+      <p align="center">
+        <button class="buttonclass"  onclick="changeImage()">Play</button>
+        <button class="buttonclass"  onclick="resetImage()">Reset</button>
+      </p>
+    </div>
+    <div class="simulator">
+      <p>Volume Flow Rate:-    
+        <select name="VolumeFlowRate" id="Volume-Flow-Rate" onchange="setValues()">
+          <option value="">--Please choose an option--</option>
+          <option value="400">400 CubicCentimetre</option>
+          <option value="450">450 CubicCentimetre</option>
+          <option value="500">500 CubicCentimetre</option>
+        </select>
+      </p>
+      <p id="volume1">Velocity at section 1 :-</p>
+      <p id="pressure1">Pressure head at Section 1:-</p>
+      <p><b>Area of Cross section at 1:- 3.00 cm<sup>2</sup></b></p>
+      <p id="volume2">Velocity at section 2 :-</p>
+      <p id="pressure2">Pressure head at Section 2:-</p>
+      <p><b>Area of Cross section at 2:- 3.25 cm<sup>2</sup></b></p>
+      <p id="volume3">Velocity at section 3 :-</p>
+      <p id="pressure3">Pressure head at Section 3:-</p>
+      <p><b>Area of Cross section at 3:- 5.25 cm<sup>2</sup></b></p>
+      <h3> Bernoulli’s Equation-</h3>P/ρg + V<sup>2</sup>/2g +Z = Constant
+      <p id="volume1">Total head at section 1:-<input type="number" id="fname1" oninput="check1()"></input> cm</p>
+      <p id="volume1">Total head at section 2:-<input type="number" id="fname2" oninput="check2()"></input> cm</p>
+      <p id="volume1">Total head at section 3:-<input type="number" id="fname3" oninput="check3()"></input> cm</p>
+      <p align="center">
+        <button class="buttonclass" onclick="reset()">RESET</button>
+      </p>
+
+            
+    </div>
+    <script >
+        function changeImage() { 
+          document.getElementById("imgClickAndChange").src = "Bernoulli1.gif";
+        }
+        function resetImage() { 
+          document.getElementById("imgClickAndChange").src = "try.gif";
+        }
+        function setValues() {
+          var v=document.getElementById("Volume-Flow-Rate").value;
+          if(v==""){
+            reset();
+            return;
+          }
+          var v1=v/3;
+          v1=v1.toFixed(2);
+          var h1=35.10-(parseFloat(Math.pow(v1, 2))/(2*981));
+          h1=h1.toFixed(2);
+          document.getElementById("volume1").innerHTML = "Velocity at section 1 :- <span>"+v1+" cm/s</span>";
+          document.getElementById("pressure1").innerHTML = "Pressure head at Section 1:- <span>"+h1+"cm</span>";
+
+          
+          var v2=v/3.25;
+          v2=v2.toFixed(2);
+          var h2=39.80-(parseFloat(Math.pow(v2, 2))/(2*981));
+          h2=h2.toFixed(2);
+          document.getElementById("volume2").innerHTML = "Velocity at section 2 :- <span>"+v2+" cm/s</span>";
+          document.getElementById("pressure2").innerHTML = "Pressure head at Section 2:- <span>"+h2+"cm</span>";
+                    
+
+          var v3=v/5.25;
+          v3=v3.toFixed(2);
+          var h3=44.50-(parseFloat(Math.pow(v3, 2))/(2*981));
+          h3=h3.toFixed(2);
+          document.getElementById("volume3").innerHTML = "Velocity at section 3 :- <span>"+v3+" cm/s</span>";
+          document.getElementById("pressure3").innerHTML = "Pressure head at Section 3:- <span>"+h3+"cm</span>";
+          }
+        function reset() {
+          document.getElementById("Volume-Flow-Rate").value = "";
+          document.getElementById("volume1").innerHTML = "Velocity at section 1 :- ";
+          document.getElementById("pressure1").innerHTML = "Pressure head at Section 1:-";
+          document.getElementById("volume2").innerHTML = "Velocity at section 2 :- ";
+          document.getElementById("pressure2").innerHTML = "Pressure head at Section 2:-";
+          document.getElementById("volume3").innerHTML = "Velocity at section 3 :- ";
+          document.getElementById("pressure3").innerHTML = "Pressure head at Section 3:-";
+          document.getElementById("fname1").value = "";
+          document.getElementById("fname2").value = "";
+          document.getElementById("fname3").value = "";
+          
+          document.getElementById("fname1").style.backgroundColor = "#fff";
+          document.getElementById("fname2").style.backgroundColor = "#fff";
+          document.getElementById("fname3").style.backgroundColor = "#fff";
+          document.getElementById("imgClickAndChange").src = "try.gif";
+        }
+      
+        function check2(){
+          var v=document.getElementById("Volume-Flow-Rate").value;
+          var c2=document.getElementById("fname2").value;
+          if(39.75<c2 && c2<39.85){
+            document.getElementById("fname2").style.backgroundColor = "#afa";
+            return;
+          }
+          document.getElementById("fname2").style.backgroundColor = "#faa";
+        }
+        function check1(){
+          var v=document.getElementById("Volume-Flow-Rate").value;
+          var c1=document.getElementById("fname1").value;
+          if(35.05<c1 && c1<35.15){
+            document.getElementById("fname1").style.backgroundColor = "#afa";
+            return;
+          }
+          document.getElementById("fname1").style.backgroundColor = "#faa";
+              
+        }
+        function check3(){
+          var v=document.getElementById("Volume-Flow-Rate").value;
+          var c3=document.getElementById("fname3").value;
+          if(44.45<c3 && c3<44.55){
+            document.getElementById("fname3").style.backgroundColor = "#afa";
+            return;
+          }
+          document.getElementById("fname3").style.backgroundColor = "#faa";
+        }
+    </script>
+  </body>
+</html>
